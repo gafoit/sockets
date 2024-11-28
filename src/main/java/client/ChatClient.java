@@ -35,6 +35,7 @@ public class ChatClient {
 
             System.out.println("Вы подключены к чату.");
             System.out.println("Для отправки личного сообщения используйте формат: @имя_пользователя сообщение");
+            System.out.println("Используйте '/list' для отображения пользователей");
             System.out.println("Для выхода введите: /exit");
 
             while (true) {

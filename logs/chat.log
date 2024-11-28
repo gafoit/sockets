@@ -1,0 +1,120 @@
+2024-11-28 16:58:08 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 16:58:08 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 16:58:54 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 16:58:59 [Thread-0] INFO  server.ClientHandler - Клиент с никнеймом '/exit' подключился.
+2024-11-28 17:03:10 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 17:03:10 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 17:03:17 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:03:20 [Thread-0] INFO  server.ClientHandler - Клиент с никнеймом '/exit' подключился.
+2024-11-28 17:08:37 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 17:08:37 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 17:08:40 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:08:57 [Thread-0] INFO  server.ClientHandler - Клиент с никнеймом 'null' подключился.
+2024-11-28 17:08:57 [Thread-0] INFO  server.ChatServer - Клиент отключен: null
+2024-11-28 17:10:14 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 17:10:14 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 17:10:18 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:10:34 [Thread-0] ERROR server.ClientHandler - Ошибка у клиента null: 
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:281)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:189)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at server.ClientHandler.run(ChatServer.java:96)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:10:34 [Thread-0] INFO  server.ChatServer - Клиент отключен: null
+2024-11-28 17:10:57 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 17:10:57 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 17:11:02 [main] INFO  server.ChatServer - Сервер запускается на порту 12345
+2024-11-28 17:11:02 [main] INFO  server.ChatServer - Сервер запущен и ожидает подключений...
+2024-11-28 17:11:06 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:11:06 [Thread-0] INFO  server.ClientHandler - Клиент с никнеймом 'Введите ваш никнейм:' подключился.
+2024-11-28 17:11:32 [Thread-0] ERROR server.ClientHandler - Ошибка у клиента Введите ваш никнейм:: 
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:281)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:189)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at server.ClientHandler.run(ChatServer.java:105)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:11:32 [Thread-0] INFO  server.ChatServer - Клиент отключен: Введите ваш никнейм:
+2024-11-28 17:11:42 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:11:42 [Thread-1] INFO  server.ClientHandler - Клиент с никнеймом 'Введите ваш никнейм:' подключился.
+2024-11-28 17:13:05 [Thread-1] ERROR server.ClientHandler - Ошибка у клиента Введите ваш никнейм:: 
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:281)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:189)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at server.ClientHandler.run(ChatServer.java:105)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:13:05 [Thread-1] INFO  server.ChatServer - Клиент отключен: Введите ваш никнейм:
+2024-11-28 17:13:09 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:13:19 [Thread-2] INFO  server.ClientHandler - Клиент с никнеймом '/list' подключился.
+2024-11-28 17:13:32 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:14:12 [Thread-3] INFO  server.ClientHandler - Клиент с никнеймом '/list' подключился.
+2024-11-28 17:16:04 [Thread-3] ERROR server.ClientHandler - Ошибка у клиента /list: 
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:281)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:189)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at server.ClientHandler.run(ChatServer.java:105)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:16:04 [Thread-3] INFO  server.ChatServer - Клиент отключен: /list
+2024-11-28 17:16:06 [Thread-2] ERROR server.ClientHandler - Ошибка у клиента /list: 
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:328)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:281)
+	at java.base/sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:324)
+	at java.base/sun.nio.cs.StreamDecoder.read(StreamDecoder.java:189)
+	at java.base/java.io.InputStreamReader.read(InputStreamReader.java:177)
+	at java.base/java.io.BufferedReader.fill(BufferedReader.java:162)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:329)
+	at java.base/java.io.BufferedReader.readLine(BufferedReader.java:396)
+	at server.ClientHandler.run(ChatServer.java:105)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:16:06 [Thread-2] INFO  server.ChatServer - Клиент отключен: /list
+2024-11-28 17:16:11 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:16:14 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:16:16 [Thread-5] INFO  server.ClientHandler - Клиент с никнеймом 'пае' подключился.
+2024-11-28 17:16:18 [Thread-5] ERROR server.ClientHandler - Ошибка у клиента пае: 
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "server.ClientHandler.getClientName()" is null
+	at server.ChatServer.getClientList(ChatServer.java:64)
+	at server.ClientHandler.run(ChatServer.java:110)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2024-11-28 17:16:18 [Thread-5] INFO  server.ChatServer - Клиент отключен: пае
+2024-11-28 17:16:21 [Thread-4] INFO  server.ClientHandler - Клиент с никнеймом 'gft' подключился.
+2024-11-28 17:16:29 [main] INFO  server.ChatServer - Новое подключение от /127.0.0.1
+2024-11-28 17:16:32 [Thread-6] INFO  server.ClientHandler - Клиент с никнеймом 'ggft' подключился.

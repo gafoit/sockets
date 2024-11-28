@@ -92,7 +92,7 @@ class ClientHandler implements Runnable {
             this.out = out;
 
             // Получение никнейма клиента
-            // out.println("Введите ваш никнейм:");
+
             this.clientName = in.readLine();
             logger.info("Клиент с никнеймом '{}' подключился.", clientName);
 
