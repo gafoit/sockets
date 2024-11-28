@@ -1,6 +1,5 @@
 package server;
 
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,6 +47,7 @@ public class ChatServer {
         clients.remove(clientHandler);
         logger.info("Клиент отключен: {}", clientHandler.getClientName());
     }
+
     public static synchronized ClientHandler getClientByName(String name) {
         for (ClientHandler client : clients) {
             if (client.getClientName().equals(name)) {
@@ -55,6 +55,20 @@ public class ChatServer {
             }
         }
         return null; // Если клиент с таким именем не найден
+    }
+
+    public static String getClientList(String currentUserName) {
+        StringBuilder clientList = new StringBuilder("Список пользователей в чате:\n");
+        synchronized (clients) {
+            for (ClientHandler client : clients) {
+                if (client.getClientName().equals(currentUserName)) {
+                    clientList.append("- ").append(client.getClientName()).append(" (Вы)\n");
+                } else {
+                    clientList.append("- ").append(client.getClientName()).append("\n");
+                }
+            }
+        }
+        return clientList.toString();
     }
 }
 
@@ -78,17 +92,50 @@ class ClientHandler implements Runnable {
             this.out = out;
 
             // Получение никнейма клиента
-            out.println("Введите ваш никнейм:");
+            // out.println("Введите ваш никнейм:");
             this.clientName = in.readLine();
             logger.info("Клиент с никнеймом '{}' подключился.", clientName);
 
-            ChatServer.broadcast(clientName + " присоединился к чату!", this);
+            synchronized (ChatServer.class) {
+                ChatServer.broadcast(clientName + " присоединился к чату!", this);
+            }
 
             // Чтение сообщений от клиента
             String message;
             while ((message = in.readLine()) != null) {
-                logger.info("Сообщение от {}: {}", clientName, message);
-                ChatServer.broadcast(clientName + ": " + message, this);
+                if (message.startsWith("/")) {
+                    // Обработка команд
+                    switch (message) {
+                        case "/list":
+                            out.println(ChatServer.getClientList(clientName));
+                            break;
+                        case "/exit":
+                            out.println("Вы покинули чат.");
+                            break;
+                        default:
+                            out.println("Неизвестная команда. Используйте /list для отображения пользователей или /exit для выхода.");
+                    }
+                } else if (message.startsWith("@")) {
+                    // Личное сообщение
+                    String[] parts = message.split(" ", 2);
+                    if (parts.length < 2) {
+                        out.println("Формат личного сообщения: @имя_пользователя сообщение");
+                        continue;
+                    }
+                    String recipientName = parts[0].substring(1); // Убираем "@"
+                    String privateMessage = parts[1];
+
+                    ClientHandler recipient = ChatServer.getClientByName(recipientName);
+                    if (recipient != null) {
+                        recipient.sendMessage("[Личное сообщение от " + clientName + "]: " + privateMessage);
+                        this.sendMessage("[Вы отправили " + recipientName + "]: " + privateMessage);
+                    } else {
+                        out.println("Пользователь с именем " + recipientName + " не найден.");
+                    }
+                } else {
+                    // Широковещательное сообщение
+                    ChatServer.broadcast(clientName + ": " + message, this);
+                }
             }
         } catch (Exception e) {
             logger.error("Ошибка у клиента {}: ", clientName, e);
